@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Pass {
+public static void main(String[] args){
+	Scanner input = new Scanner(System.in);
+	String pass;
+	String name;
+	int pie;
+	String ask;
+	System.out.println("Please enter in the passcode!");
+	pass = input.nextLine();
+	if (pass.equals("nom1345")){
+		System.out.println("Password accepted!");
+		System.out.println("What is your name!");
+		name = input.nextLine();
+		System.out.println("Hello " + name + "!");
+		pie = 4;
+		do{
+			ask = input.nextLine();
+			if (ask.charAt(0) == '/'){
+				if (ask.equals("/help")){
+					System.out.println("=====Help=====");
+					System.out.println("/help | List commands!");
+					System.out.println("/stop | stops the chat!");
+					System.out.println("/hi | say hello to the computer!");
+					System.out.println("/paste | paste the name!");
+				}// end of if "HELP"
+				if (ask.equals("/stop")){
+					System.out.println("Stoping system!");
+					pie = 5;
+				}//End of if "/STOP"
+				if (ask.equals("/hi")){
+					System.out.println("Hello " + name + "!");
+				}//End of if "/HI"
+				if (ask.equals("/paste")){
+					System.out.println(name);
+				}//End of if "/PASTE"
+			}//end of if
+			else{
+				System.out.println("[" + name + "] " + ask);
+			}//end of else
+		}
+		while (pie == 4);
+	}//End of if one
+	else{
+		System.out.println("Password denied!");
+	}
+	System.out.println("Thank you for playing my game!");
+}//end of main
+}
